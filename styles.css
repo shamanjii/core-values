@@ -613,11 +613,21 @@ select:focus-visible {
   }
 
   .section-heading {
-    margin-bottom: 16px;
+    margin-bottom: 14px;
+  }
+
+  #compareScreen .kicker {
+    margin-bottom: 6px;
   }
 
   #compareScreen h2 {
-    font-size: 1.85rem;
+    font-size: 1.55rem;
+    margin-bottom: 8px;
+  }
+
+  #compareScreen #comparePrompt {
+    font-size: 0.95rem;
+    line-height: 1.5;
   }
 
   .compare-layout {
@@ -644,13 +654,28 @@ select:focus-visible {
   }
 
   .compare-actions {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
+    display: flex;
+    flex-wrap: wrap;
     align-items: stretch;
+    gap: 8px;
   }
 
-  .compare-actions button {
-    width: 100%;
+  /* "Beide behalten": volle Breite, prominent, direkt unter den Karten */
+  #bothButton {
+    order: -1;
+    flex-basis: 100%;
+    min-height: 54px;
+    font-size: 1rem;
+    border-color: var(--sage-dark);
+    background: linear-gradient(150deg, var(--sage), var(--sage-dark));
+    color: #fff;
+    box-shadow: 0 10px 24px rgba(79, 106, 89, 0.24);
+  }
+
+  /* Vorherige / Überspringen / Ergebnis: kompakt darunter, je halbe Breite */
+  #undoCompareButton,
+  #skipButton,
+  #finishButton {
+    flex: 1 1 calc(50% - 4px);
   }
 }
