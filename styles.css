@@ -406,24 +406,28 @@ select:focus-visible {
 .choice-card h3 {
   margin-bottom: 0;
   font-family: Lora, Georgia, serif;
-  font-size: 1.35rem;
+  font-size: 1.55rem;
+  line-height: 1.15;
 }
 
 .value-card p,
 .choice-card p {
   margin: 0;
   color: var(--muted);
-  line-height: 1.55;
+  font-size: 1rem;
+  line-height: 1.65;
 }
 
 .tag {
   width: fit-content;
+  margin-bottom: 9px;
   border-radius: 999px;
   background: rgba(120, 145, 127, 0.14);
   color: var(--sage-dark);
-  padding: 5px 10px;
-  font-size: 0.78rem;
-  font-weight: 800;
+  padding: 4px 9px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .select-actions {
