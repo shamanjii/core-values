@@ -5,7 +5,6 @@ const VALUES = [
   { id: "gemeinschaft", name: "Gemeinschaft", category: "Beziehung & Zugehörigkeit", description: "Teil von etwas Größerem als dir selbst zu sein." },
   { id: "loyalitaet", name: "Loyalität", category: "Beziehung & Zugehörigkeit", description: "Treue zu den Menschen und Dingen, für die du einstehst." },
   { id: "fuersorge", name: "Fürsorge", category: "Beziehung & Zugehörigkeit", description: "Für andere da sein und sich um sie kümmern." },
-  { id: "verbundenheit", name: "Verbundenheit", category: "Beziehung & Zugehörigkeit", description: "Das Gefühl, mit anderen wirklich in Kontakt zu stehen." },
   { id: "zugehoerigkeit", name: "Zugehörigkeit", category: "Beziehung & Zugehörigkeit", description: "Irgendwo dazuzugehören und angenommen zu sein." },
   { id: "partnerschaft", name: "Partnerschaft", category: "Beziehung & Zugehörigkeit", description: "Das Leben Seite an Seite mit einem Menschen teilen." },
 
@@ -16,7 +15,6 @@ const VALUES = [
   { id: "verantwortung", name: "Verantwortung", category: "Charakter & Integrität", description: "Für dein Tun und seine Folgen einstehen." },
   { id: "verlaesslichkeit", name: "Verlässlichkeit", category: "Charakter & Integrität", description: "Ein Mensch sein, auf den man zählen kann." },
   { id: "wuerde", name: "Würde", category: "Charakter & Integrität", description: "Dir und anderen mit Respekt begegnen." },
-  { id: "fairness", name: "Fairness", category: "Charakter & Integrität", description: "Gerecht und unparteiisch handeln." },
   { id: "demut", name: "Demut", category: "Charakter & Integrität", description: "Dich selbst nicht über andere stellen." },
 
   { id: "lernen", name: "Lernen", category: "Wachstum & Entfaltung", description: "Immer weiter wachsen und Neues verstehen." },
@@ -24,32 +22,25 @@ const VALUES = [
   { id: "kreativitaet", name: "Kreativität", category: "Wachstum & Entfaltung", description: "Eigenes erschaffen und Neues denken." },
   { id: "selbstentwicklung", name: "Selbstentwicklung", category: "Wachstum & Entfaltung", description: "An dir arbeiten und über dich hinauswachsen." },
   { id: "meisterschaft", name: "Meisterschaft", category: "Wachstum & Entfaltung", description: "Etwas wirklich gut beherrschen wollen." },
-  { id: "potenzial", name: "Potenzial", category: "Wachstum & Entfaltung", description: "Das ausschöpfen, was in dir steckt." },
   { id: "offenheit", name: "Offenheit", category: "Wachstum & Entfaltung", description: "Bereit für neue Sichtweisen und Erfahrungen sein." },
   { id: "weisheit", name: "Weisheit", category: "Wachstum & Entfaltung", description: "Aus Erfahrung tiefere Einsicht gewinnen." },
 
   { id: "freiheit", name: "Freiheit", category: "Freiheit & Autonomie", description: "Dein Leben nach eigenen Vorstellungen führen." },
   { id: "unabhaengigkeit", name: "Unabhängigkeit", category: "Freiheit & Autonomie", description: "Auf eigenen Beinen stehen." },
-  { id: "selbstbestimmung", name: "Selbstbestimmung", category: "Freiheit & Autonomie", description: "Selbst entscheiden, wohin dein Weg führt." },
   { id: "spontaneitaet", name: "Spontaneität", category: "Freiheit & Autonomie", description: "Dem Augenblick folgen, ohne festen Plan." },
   { id: "abenteuer", name: "Abenteuer", category: "Freiheit & Autonomie", description: "Aufbrechen und das Unbekannte suchen." },
-  { id: "wagemut", name: "Wagemut", category: "Freiheit & Autonomie", description: "Risiken eingehen für das, was dir wichtig ist." },
 
   { id: "erfolg", name: "Erfolg", category: "Leistung & Wirkung", description: "Erreichen, was du dir vornimmst." },
   { id: "ambition", name: "Ambition", category: "Leistung & Wirkung", description: "Dir große Ziele setzen und sie verfolgen." },
-  { id: "leistung", name: "Leistung", category: "Leistung & Wirkung", description: "Etwas durch Anstrengung erreichen." },
   { id: "fuehrung", name: "Führung", category: "Leistung & Wirkung", description: "Andere leiten und Richtung geben." },
   { id: "einfluss", name: "Einfluss", category: "Leistung & Wirkung", description: "Etwas in der Welt bewegen können." },
-  { id: "exzellenz", name: "Exzellenz", category: "Leistung & Wirkung", description: "Den hohen Anspruch an dich selbst leben." },
   { id: "disziplin", name: "Disziplin", category: "Leistung & Wirkung", description: "Dranbleiben, auch wenn die Motivation fehlt." },
-  { id: "zielstrebigkeit", name: "Zielstrebigkeit", category: "Leistung & Wirkung", description: "Fokussiert auf das hinarbeiten, was zählt." },
 
   { id: "sinn", name: "Sinn", category: "Sinn & Transzendenz", description: "In deinem Tun eine tiefere Bedeutung finden." },
   { id: "spiritualitaet", name: "Spiritualität", category: "Sinn & Transzendenz", description: "Eine Verbindung zu etwas Größerem spüren." },
   { id: "glaube", name: "Glaube", category: "Sinn & Transzendenz", description: "Aus einer inneren Überzeugung heraus leben." },
   { id: "dankbarkeit", name: "Dankbarkeit", category: "Sinn & Transzendenz", description: "Das Gute im Leben sehen und schätzen." },
   { id: "achtsamkeit", name: "Achtsamkeit", category: "Sinn & Transzendenz", description: "Bewusst im Hier und Jetzt sein." },
-  { id: "stille", name: "Stille", category: "Sinn & Transzendenz", description: "Ruhe und Raum für dich selbst finden." },
   { id: "naturverbundenheit", name: "Naturverbundenheit", category: "Sinn & Transzendenz", description: "Dich als Teil der Natur fühlen." },
   { id: "schoenheit", name: "Schönheit", category: "Sinn & Transzendenz", description: "Das Schöne wahrnehmen und in dein Leben holen." },
 
@@ -58,7 +49,6 @@ const VALUES = [
   { id: "gesundheit", name: "Gesundheit", category: "Sicherheit & Stabilität", description: "Körperlich und seelisch im Gleichgewicht sein." },
   { id: "ordnung", name: "Ordnung", category: "Sicherheit & Stabilität", description: "Klarheit und Struktur in deinem Leben." },
   { id: "heimat", name: "Heimat", category: "Sicherheit & Stabilität", description: "Einen Ort haben, an den du gehörst." },
-  { id: "bestaendigkeit", name: "Beständigkeit", category: "Sicherheit & Stabilität", description: "Auf Dauer und Verlässlichkeit bauen." },
 
   { id: "gerechtigkeit", name: "Gerechtigkeit", category: "Gesellschaft & Werte", description: "Für das eintreten, was recht ist." },
   { id: "nachhaltigkeit", name: "Nachhaltigkeit", category: "Gesellschaft & Werte", description: "Verantwortungsvoll mit der Zukunft umgehen." },
@@ -231,17 +221,19 @@ function renderSelection() {
   els.selectionDoneButton.textContent = selectedValues().length < 2 ? "Mindestens 2 Werte wählen" : "Weiter zum Vergleich";
 
   els.valueGrid.innerHTML = VALUES.map((value) => {
-    const isIn = state.selections[value.id] === "in";
+    const status = state.selections[value.id] === "in" ? "in"
+      : state.selections[value.id] === "out" ? "out" : "";
     return `
-      <article class="value-card" data-value-id="${value.id}" data-status="${isIn ? "in" : ""}">
+      <article class="value-card" data-value-id="${value.id}" data-status="${status}">
         <div>
           <div class="tag">${value.category}</div>
           <h3>${value.name}</h3>
         </div>
         <p>${value.description}</p>
-        <button type="button" class="select-toggle" data-status="in" aria-pressed="${isIn}">
-          ${isIn ? "Im Rennen ✓" : "Auswählen"}
-        </button>
+        <div class="select-actions" aria-label="${value.name} einordnen">
+          <button type="button" class="sort-btn sort-in" data-status="in" aria-pressed="${status === "in"}">Auf jeden Fall</button>
+          <button type="button" class="sort-btn sort-out" data-status="out" aria-pressed="${status === "out"}">Eher nicht</button>
+        </div>
       </article>
     `;
   }).join("");
