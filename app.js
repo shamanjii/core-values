@@ -260,7 +260,8 @@ function renderComparison() {
   const promptIndex = state.comparisons.length % PROMPTS.length;
   els.comparePrompt.textContent = PROMPTS[promptIndex];
   els.undoCompareButton.disabled = state.comparisons.length === 0;
-  els.finishButton.classList.toggle("hidden", state.comparisons.length < Math.min(10, comparisonTarget()));
+  // "Ergebnis ansehen" erst auf der letzten Frage zeigen – kein vorzeitiger Ausstieg.
+  els.finishButton.classList.toggle("hidden", state.comparisons.length < comparisonTarget() - 1);
 
   const left = VALUES.find((value) => value.id === pair[0]);
   const right = VALUES.find((value) => value.id === pair[1]);
@@ -332,11 +333,7 @@ function recordChoice(winnerId, loserId, type = "choice") {
   state.currentPair = choosePair();
   saveState();
 
-  // "Beide behalten" beendet in der Schlussphase direkt: ist der "Ergebnis ansehen"-
-  // Knopf ohnehin schon freigeschaltet und zwei Werte sind gleichwertig, springt es
-  // gleich zum Ergebnis, statt noch eine Frage nachzuladen.
-  const finishUnlocked = state.comparisons.length >= Math.min(10, comparisonTarget());
-  if (state.comparisons.length >= comparisonTarget() || (type === "both" && finishUnlocked)) {
+  if (state.comparisons.length >= comparisonTarget()) {
     setScreen("result");
   } else {
     render();
