@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>core values</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=4" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="topbar" aria-label="App Navigation">
+        <button class="brand" id="brandButton" type="button" aria-label="Zur Startseite">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+              <path d="M12 2.5 14.7 9.3 21.5 12 14.7 14.7 12 21.5 9.3 14.7 2.5 12 9.3 9.3Z"
+                    fill="currentColor" />
+            </svg>
+          </span>
+          <span class="brand-text">
+            <span class="brand-name">Core Value Discovery</span>
+            <span class="brand-sub">Werte klar finden</span>
+          </span>
+        </button>
+        <div class="topbar-actions">
+          <button class="icon-button" id="backButton" type="button" aria-label="Zurück" title="Zurück">
+            <span aria-hidden="true">←</span>
+          </button>
+          <button class="icon-button" id="resetButton" type="button" aria-label="Neu beginnen" title="Neu beginnen">
+            <span aria-hidden="true">↺</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="hero" id="hero">
+        <div class="hero-copy">
+          <p class="kicker">Ein ruhiger Weg zu klareren Entscheidungen</p>
+          <h1>Welche Werte sollen dein Leben wirklich leiten?</h1>
+          <p>
+            Wähle erst, was für dich grundsätzlich infrage kommt. Danach
+            vergleichst du Werte paarweise, bis ein natürliches Ranking
+            entsteht.
+          </p>
+        </div>
+        <div class="start-panel" aria-label="Startoptionen">
+          <label for="targetCount">Wie viele Kernwerte suchst du?</label>
+          <select id="targetCount">
+            <option value="3">Top 3</option>
+            <option value="4">Top 4</option>
+            <option value="5" selected>Top 5</option>
+            <option value="6">Top 6</option>
+            <option value="7">Top 7</option>
+          </select>
+          <button class="primary-button" id="startButton" type="button">Beginnen</button>
+        </div>
+      </section>
+
+      <section class="progress-wrap" aria-label="Fortschritt">
+        <div class="progress-labels">
+          <span id="stepLabel">Start</span>
+          <span id="progressText">0%</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </section>
+
+      <section class="screen hidden" id="selectionScreen" aria-labelledby="selectionTitle">
+        <div class="section-heading">
+          <p class="kicker">Vorauswahl</p>
+          <h2 id="selectionTitle">Was kommt für dich infrage?</h2>
+          <p>
+            Entscheide großzügig. Unsichere Werte dürfen im Spiel noch eine
+            Chance bekommen.
+          </p>
+        </div>
+        <div class="selection-toolbar">
+          <div class="counter" id="selectionCounter">0 ausgewählt</div>
+          <button class="secondary-button" id="selectionDoneButton" type="button">Weiter zum Vergleich</button>
+        </div>
+        <div class="value-grid" id="valueGrid"></div>
+      </section>
+
+      <section class="screen hidden" id="compareScreen" aria-labelledby="compareTitle">
+        <div class="section-heading centered">
+          <p class="kicker">Vergleich</p>
+          <h2 id="compareTitle">Was soll dich stärker leiten?</h2>
+          <p id="comparePrompt">Wähle den Wert, der sich im Moment stimmiger anfühlt.</p>
+        </div>
+        <div class="compare-layout" id="compareLayout"></div>
+        <div class="compare-actions">
+          <button class="secondary-button" id="undoCompareButton" type="button">Vorherige Frage</button>
+          <button class="secondary-button" id="bothButton" type="button">Beide behalten</button>
+          <button class="ghost-button" id="skipButton" type="button">Überspringen</button>
+          <button class="primary-button" id="finishButton" type="button">Ergebnis ansehen</button>
+        </div>
+      </section>
+
+      <section class="screen hidden" id="resultScreen" aria-labelledby="resultTitle">
+        <div class="section-heading">
+          <p class="kicker">Dein Ranking</p>
+          <h2 id="resultTitle">Diese Werte stehen gerade oben.</h2>
+          <p>
+            Das Ergebnis ist keine Diagnose. Es ist ein Ausgangspunkt, den du
+            weiter schärfen kannst.
+          </p>
+        </div>
+        <div class="result-layout">
+          <ol class="result-list" id="resultList"></ol>
+          <aside class="reflection-panel">
+            <h3>Nächster guter Schritt</h3>
+            <p id="reflectionCopy"></p>
+            <button class="secondary-button" id="refineButton" type="button">Noch genauer machen</button>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js?v=3"></script>
+  </body>
+</html>
