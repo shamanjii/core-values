@@ -332,7 +332,11 @@ function recordChoice(winnerId, loserId, type = "choice") {
   state.currentPair = choosePair();
   saveState();
 
-  if (state.comparisons.length >= comparisonTarget()) {
+  // "Beide behalten" beendet in der Schlussphase direkt: ist der "Ergebnis ansehen"-
+  // Knopf ohnehin schon freigeschaltet und zwei Werte sind gleichwertig, springt es
+  // gleich zum Ergebnis, statt noch eine Frage nachzuladen.
+  const finishUnlocked = state.comparisons.length >= Math.min(10, comparisonTarget());
+  if (state.comparisons.length >= comparisonTarget() || (type === "both" && finishUnlocked)) {
     setScreen("result");
   } else {
     render();
